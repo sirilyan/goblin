@@ -81,13 +81,13 @@ export default define(meta, paramDef, async (ps, me) => {
 
 	switch (ps.origin) {
 		case "local":
-			query.andWhere("user.host IS NULL AND user.name NOT LIKE '%_at_tumblr_com'");
+			query.andWhere("user.host IS NULL AND user.username NOT LIKE '%_at_tumbr_com'");
 			break;
 		case "remote":
 			query.andWhere("user.host IS NOT NULL");
 			break;
 		case "tumblr":
-			query.andWhere("user.host IS NULL AND user.name LIKE '%_at_tumblr_com'");
+			query.andWhere("user.host IS NULL AND user.username LIKE '%_at_tumblr_com'");
 			break;
 	}
 
